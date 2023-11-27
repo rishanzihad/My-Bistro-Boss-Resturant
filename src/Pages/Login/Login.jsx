@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
-import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import Swal from 'sweetalert2'
-import { AuthContext } from '../../AuthProvider/AuthProvider';
-import SocialLogin from '../../Components/SocialLogin/SocialLogin';
+import { useContext, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from "react-simple-captcha";
+import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true);
@@ -92,9 +91,9 @@ const Login = () => {
                                 {/* TODO: apply disabled for re captcha */}
                                 <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
                             </div>
-                            <SocialLogin></SocialLogin>
                         </form>
-                        <p className='px-6'><small>New Here? <Link to="/register">Create an account</Link> </small></p>
+                        <p className='px-6'><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
